@@ -1,0 +1,30 @@
+version: '3'
+services:
+
+  db:
+    image: postgres:9.6
+    environment:
+      LC_ALL: C.UTF-8
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - webmarks-network
+
+  app:
+    build: ./
+    command: rails s
+    depends_on:
+      - db
+    links:
+      - db
+    volumes:
+      - .:/app
+    networks:
+      - webmarks-network
+
+volumes:
+  db-data:
+    driver: local
+
+networks:
+    webmarks-network:
