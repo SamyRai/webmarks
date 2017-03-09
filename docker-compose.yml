@@ -12,15 +12,23 @@ services:
 
   app:
     build: ./
-    command: rails s
+    command: rails s -b 0.0.0.0
     depends_on:
       - db
+    ports:
+      - "80:3000"
     links:
       - db
     volumes:
       - .:/app
+      - /bundle:/bundle
     networks:
       - webmarks-network
+
+  bundle:
+    image: busybox
+    volumes:
+      - /bundle
 
 volumes:
   db-data:
