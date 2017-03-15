@@ -1,11 +1,9 @@
 <h1>Sites</h1>
-
-<%= "No sites yet" unless @sites %>
-
+<% if @sites.present? %>
   <table class="table table-striped">
     <tr>
-    <td>Number</td>
-    <td>Host</td>
+    <td class="col-md-1">Number</td>
+    <td class="col-md-11">Host</td>
     </tr>
     <% Array(@sites).each.with_index(1) do |site, index| %>
     <tr>
@@ -14,3 +12,6 @@
     </tr>
     <% end %>
   </table>
+<% else %>
+  <%= "No sites yet" %>
+<% end %>

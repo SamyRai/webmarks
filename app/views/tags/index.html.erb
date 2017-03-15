@@ -1,18 +1,24 @@
 <h1>Tags</h1>
+<% if @tags.present? %>
 
-<%= "No tags yet" unless @tags %>
+  <table class="table table-striped">
+    <tr>
+      <td class="col-md-1">Number</td>
+      <td class="col-md-9">Name</td>
+      <td class="col-md-1">Count</td>
+      <td class="col-md-1">Action</td>
+    </tr>
 
-<table class="table table-striped">
-  <tr>
-    <td class="col-md-1">Number</td>
-    <td class="col-md-10">Name</td>
-    <td class="col-md-1">Count</td>
-  </tr>
+    <% @tags.each.with_index(1) do |tag, index| %>
+    <tr>
+      <td><%= index %></td>
+      <td><%= link_to tag.name, tag_bookmarks_url(tag.id) %></td>
+      <td><%= tag.bookmarks.count %></td>
+      <td><%= link_to "[Delete]", tag, method: :delete%></td>
+    </tr>
+    <% end %>
+  </table>
+<% else %>
 
-  <% @tags.each.with_index(1) do |tag, index| %>
-  <tr>
-    <td><%= index %></td>
-    <td><%= link_to tag.name, tag_bookmarks_url(tag.id) %></td>
-    <td><%= tag.bookmarks.count %></td>
-  </tr>
-  <% end %>
+<%= "No tags yet" %>
+<% end %>

@@ -3,10 +3,9 @@
   <table class="table table-striped">
     <tr>
       <td class="col-md-1">Number</td>
-      <td class="col-md-3">Title</td>
+      <td class="col-md-4">Title</td>
       <td class="col-md-3">Url</td>
       <td class="col-md-3">Shortening</td>
-      <td class="col-md-1">Action</td>
     </tr>
 
     <% Array(@bookmarks).each.with_index(1) do |bookmark, index| %>
@@ -15,10 +14,9 @@
       <td><%= link_to bookmark.title, bookmark %></td>
       <td><%= bookmark.url %></td>
       <td><%= bookmark.shortening %></td>
-      <td><%= link_to "[Delete]", bookmark, method: :delete%></td>
     </tr>
     <% end %>
   </table>
 <% else %>
-  <%= "No bookmarks yet"%>
+  <%= "No bookmarks found by request \"#{params[:query]}\"" %>
 <% end %>
