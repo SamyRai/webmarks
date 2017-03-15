@@ -1,7 +1,24 @@
 require 'test_helper'
 
 class BookmarksControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @user = User.create(email: 'anem@dfmdf.co', password: 'asdfsf')
+  end
+
+  test "root should refer to bookmarks#index" do
+    assert_routing "/", :controller => "bookmarks", :action => "index"
+  end
+
+  test "should be redirected to login page if not authorized" do
+    delete logout_url
+    get bookmarks_url
+    assert_redirected_to login_url
+  end
+
+  test "should get index if authorized" do
+    post login_url, params: { session: { email: 'anem@dfmdf.co', password: 'asdfsf' } }
+    get bookmarks_url
+    assert_response :success
+  end
+
 end
