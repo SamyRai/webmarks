@@ -1,3 +1,8 @@
+[![Code Climate](https://codeclimate.com/github/SamyRai/webmarks/badges/gpa.svg)](https://codeclimate.com/github/SamyRai/webmarks)
+[![Issue Count](https://codeclimate.com/github/SamyRai/webmarks/badges/issue_count.svg)](https://codeclimate.com/github/SamyRai/webmarks)
+[![Test Coverage](https://codeclimate.com/github/SamyRai/webmarks/badges/coverage.svg)](https://codeclimate.com/github/SamyRai/webmarks/coverage)
+[![Build Status](https://semaphoreci.com/api/v1/gigadamer/webmarks/branches/master/shields_badge.svg)](https://semaphoreci.com/gigadamer/webmarks)
+
 <div align="center">
   <img src="./public/favicon.png"/>
   <h1>Keep all your bookmarks in a safe place</h1>
