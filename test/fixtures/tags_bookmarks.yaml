@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+search_google:
+  tag_id: 1
+  bookmark_id: 1
+
+search_yandex:
+  tag_id: 1
+  bookmark_id: 3
+
+blog:
+  tag_id: 2
+  bookmark_id: 2
+
+techno:
+  tag_id: 3
+  bookmark_id: 2
+
+it:
+  tag_id: 4
+  bookmark_id: 2

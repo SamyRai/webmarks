@@ -1,11 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  url: MyString
-  shortening: MyString
+google:
+  id: 1
+  title: Google
+  url: http://www.google.com
+  shortening: http://goo.gl
 
-two:
-  title: MyString
-  url: MyString
-  shortening: MyString
+habr:
+  id: 2
+  title: Habrahabr
+  url: http://www.habrahabr.ru
+  shortening: http://habr.ru
+
+yandex:
+  id: 3
+  title: Yandex
+  url: http://yandex.ru
+  shortening: http://ya.ru

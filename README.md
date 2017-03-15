@@ -25,6 +25,12 @@ Yes, it is that sipmple, just one command, and you application will be available
 
 `ip address of your docker-machine` is you use *Mac*
 
+To run tests please use this command:
+
+```sh
+docker-compose run app rails test
+```
+
 :rocket::rocket::rocket:
 
 ### Local machine

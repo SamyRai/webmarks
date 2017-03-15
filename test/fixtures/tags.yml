@@ -1,7 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+search:
+  id: 1
+  name: Seach
 
-two:
-  name: MyString
+blog:
+  id: 2
+  name: Blogs
+
+techno:
+  id: 3
+  name: Techno
+
+it:
+  id: 4
+  name: It

@@ -1,7 +1,4 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  top_url: MyString
-
-two:
-  top_url: MyString
+  top_url: www.google.com
