@@ -1,24 +1,39 @@
+<div align="center">
+  <img src="./public/favicon.png"/>
+  <h1>Keep all your bookmarks in a safe place</h1>
+</div>
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Development
 
-Things you may want to cover:
+### Docker
 
-* Ruby version
+Make sure you have the latest version of docker and docker-compose or at least:
+ *Docker version 17.03.0-ce*
+ *docker-compose version 1.11.1*
 
-* System dependencies
+Then run
 
-* Configuration
+```sh
+docker-compose up
+```
 
-* Database creation
+Yes, it is that sipmple, just one command, and you application will be available at
 
-* Database initialization
+`http://localhost` if you use linux and
+`ip address of your docker-machine` is you use Mac
 
-* How to run the test suite
+### Local machine
 
-* Services (job queues, cache servers, search engines, etc.)
+If you don't want to install docker you still can run application by simply installing all requriments
 
-* Deployment instructions
+ruby v.2.4
+rails v.5.0.2
+PostgreSQL v.9.6
 
-* ...
+Edit `database.yml` file and running
+
+```sh
+rails s
+```
