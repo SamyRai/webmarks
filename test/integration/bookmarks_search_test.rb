@@ -15,35 +15,35 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   test 'search when no bookmarks found' do
     post login_url, params: @sess_params
     get '/'
-    assert_select "h1", 'Bookmarks [Add]'
-    get search_path, params: {query: 'Blogs'}
-    assert_select "p", 'No bookmarks found by request "Blogs"'
+    assert_select 'h1', 'Bookmarks [Add]'
+    get search_path, params: { query: 'Blogs' }
+    assert_select 'p', 'No bookmarks found by request "Blogs"'
   end
 
   test 'search when bookmark found by name' do
     post login_url, params: @sess_params
     get '/'
 
-    assert_select "h1", 'Bookmarks [Add]'
-    get search_path, params: {query: 'MasterCard'}
-    assert_select "td", 'MasterCard'
+    assert_select 'h1', 'Bookmarks [Add]'
+    get search_path, params: { query: 'MasterCard' }
+    assert_select 'td', 'MasterCard'
   end
 
   test 'search when bookmark found by shortening' do
     post login_url, params: @sess_params
     get '/'
 
-    assert_select "h1", 'Bookmarks [Add]'
-    get search_path, params: {query: 'mat.er'}
-    assert_select "td", 'MasterCard'
+    assert_select 'h1', 'Bookmarks [Add]'
+    get search_path, params: { query: 'mat.er' }
+    assert_select 'td', 'MasterCard'
   end
 
   test 'search when bookmark found by url' do
     post login_url, params: @sess_params
     get '/'
 
-    assert_select "h1", 'Bookmarks [Add]'
-    get search_path, params: {query: 'http://master.com'}
-    assert_select "td", 'MasterCard'
+    assert_select 'h1', 'Bookmarks [Add]'
+    get search_path, params: { query: 'http://master.com' }
+    assert_select 'td', 'MasterCard'
   end
 end

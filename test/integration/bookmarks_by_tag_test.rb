@@ -10,7 +10,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       shortening: 'http://mat.er',
       user_id: @user.id, all_tags: 'Money, Gold, Card'
     )
-
   end
 
   test 'tag with no bookmarks found' do
@@ -18,7 +17,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     get '/'
 
     get tag_bookmarks_url(Tag.create(name: 'Stress').id)
-    assert_select "p", 'No bookmarks yet'
+    assert_select 'p', 'No bookmarks yet'
   end
 
   test 'tag with bookmark found' do
@@ -26,6 +25,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     get '/'
 
     get tag_bookmarks_url(Tag.last.id)
-    assert_select "td", 'MasterCard'
+    assert_select 'td', 'MasterCard'
   end
 end
