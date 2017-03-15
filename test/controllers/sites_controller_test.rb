@@ -3,7 +3,7 @@ require 'test_helper'
 class SitesControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = User.create(email: 'anem@dfmdf.co', password: 'asdfsf')
-    @sess_params = { session: { email: 'anem@dfmdf.co', password: 'asdfsf' } }
+    @sess_params = { session: { email: @user.email, password: @user.password } }
   end
 
   test 'should be redirected to login page if not authorized' do

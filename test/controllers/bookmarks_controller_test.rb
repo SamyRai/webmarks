@@ -3,7 +3,7 @@ require 'test_helper'
 class BookmarksControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = User.create(email: 'anem@dfmdf.co', password: 'asdfsf')
-    @sess_params = { session: { email: 'anem@dfmdf.co', password: 'asdfsf' } }
+    @sess_params = { session: { email: @user.email, password: @user.password } }
   end
 
   test 'root should refer to bookmarks#index' do

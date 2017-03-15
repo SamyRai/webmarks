@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: session_params[:email].downcase)
+
     if user && user.password == session_params[:password]
       log_in user
       redirect_to bookmarks_url

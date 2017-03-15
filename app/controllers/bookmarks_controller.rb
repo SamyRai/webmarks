@@ -1,23 +1,27 @@
 class BookmarksController < ApplicationController
   def new
     return @bookmark = Bookmark.new if logged_in?
+
     redirect_to login_url
   end
 
   def show
     return redirect_to login_url if not_logged_in?
+
     @bookmark = Bookmark.find(params[:id])
     redirect_to bookmarks_url unless @bookmark
   end
 
   def destroy
     return redirect_to login_url if not_logged_in?
+
     Bookmark.find(params[:id]).destroy
     redirect_to bookmarks_url
   end
 
   def create
     return redirect_to login_url if not_logged_in?
+
     @bookmark = Bookmark.new(bookmark_params)
     if @bookmark.save
       redirect_to bookmarks_url
@@ -28,6 +32,7 @@ class BookmarksController < ApplicationController
 
   def search
     return redirect_to login_url if not_logged_in?
+
     @bookmarks = Bookmark.where(
       'title LIKE :query OR url LIKE :query OR shortening LIKE :query',
       query: "%#{params[:query]}%"
