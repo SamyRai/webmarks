@@ -28,7 +28,10 @@ class BookmarksController < ApplicationController
 
   def search
     return redirect_to login_url if not_logged_in?
-    @bookmarks = Bookmark.where('title LIKE :query OR url LIKE :query OR shortening LIKE :query', query: "%#{params[:query]}%")
+    @bookmarks = Bookmark.where(
+      'title LIKE :query OR url LIKE :query OR shortening LIKE :query',
+      query: "%#{params[:query]}%"
+    )
   end
 
   def index
