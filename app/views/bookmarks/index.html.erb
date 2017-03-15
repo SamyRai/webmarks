@@ -1,0 +1,21 @@
+<h1>Bookmarks <%= link_to "[Add]", new_bookmark_path %></h1>
+
+<%= "No bookmarks yet" unless @bookmarks %>
+
+<table class="table table-striped">
+  <tr>
+    <td>Number</td>
+    <td>Title</td>
+    <td>Url</td>
+    <td>Shortening</td>
+  </tr>
+
+  <% Array(@bookmarks).each.with_index(1) do |bookmark, index| %>
+  <tr>
+    <td><%= index %></td>
+    <td><%= link_to bookmark.title, bookmark %></td>
+    <td><%= bookmark.url %></td>
+    <td><%= bookmark.shortening %></td>
+  </tr>
+  <% end %>
+</table>

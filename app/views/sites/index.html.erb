@@ -1,0 +1,16 @@
+<h1>Sites</h1>
+
+<%= "No sites yet" unless @sites %>
+
+  <table class="table table-striped">
+    <tr>
+    <td>Number</td>
+    <td>Host</td>
+    </tr>
+    <% Array(@sites).each.with_index(1) do |site, index| %>
+    <tr>
+      <td><%=index%></td>
+      <td><%=site.top_url%></td>
+    </tr>
+    <% end %>
+  </table>

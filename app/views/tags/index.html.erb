@@ -1,0 +1,18 @@
+<h1>Tags</h1>
+
+<%= "No tags yet" unless @tags %>
+
+<table class="table table-striped">
+  <tr>
+    <td class="col-md-1">Number</td>
+    <td class="col-md-10">Name</td>
+    <td class="col-md-1">Count</td>
+  </tr>
+
+  <% @tags.each.with_index(1) do |tag, index| %>
+  <tr>
+    <td><%= index %></td>
+    <td><%= link_to tag.name, tag_bookmarks_url(tag.id) %></td>
+    <td><%= tag.bookmarks.count %></td>
+  </tr>
+  <% end %>

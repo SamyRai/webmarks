@@ -1,0 +1,17 @@
+<h1>Bookmark id=<%=@bookmark.id%></h1>
+<table class="table table-striped">
+  <tr>
+    <td>Title</td>    <td><%=@bookmark.title%></td>
+  </tr>
+  <tr>
+    <td>Url</td>    <td><%=@bookmark.url%></td>
+  </tr>
+  <tr>
+    <td>Shortening</td>    <td><%=@bookmark.shortening%></td>
+  </tr>
+</table>
+<h2>Tags</h2>
+<% @bookmark.tags.each do |tag| %>
+  <%= link_to tag.name, tag_bookmarks_url(tag.id)%>
+  <br>
+<%end%>

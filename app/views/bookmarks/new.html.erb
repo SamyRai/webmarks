@@ -1,0 +1,35 @@
+<% provide(:title, 'New Bookmark') %>
+<h1>New bookmark</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@bookmark, url: bookmarks_path) do |f| %>
+      <% if @bookmark.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-danger">
+            The form contains <%= pluralize(@bookmark.errors.count, "error") %>.
+          </div>
+          <ul>
+          <% @bookmark.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+      <br>
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control' %>
+      <br>
+      <%= f.label :shortening %>
+      <%= f.text_field :shortening, class: 'form-control' %>
+      <br>
+      <%= f.label :tags %>
+      <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
+      <br>
+      <%= hidden_field_tag("bookmark[user_id]", current_user.id) %>
+      <%= f.submit "Create a bookmark", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
